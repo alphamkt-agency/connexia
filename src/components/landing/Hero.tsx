@@ -58,18 +58,18 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border/30 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-border/30 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="text-center px-4">
               <div className="font-display font-bold text-3xl md:text-4xl gradient-text">1000+</div>
-              <div className="text-sm text-muted-foreground mt-1">Atendimentos/mês</div>
+              <div className="text-sm text-muted-foreground mt-2">Atendimentos/mês</div>
             </div>
-            <div className="text-center">
+            <div className="text-center px-4">
               <div className="font-display font-bold text-3xl md:text-4xl gradient-text">100%</div>
-              <div className="text-sm text-muted-foreground mt-1">Humanizado</div>
+              <div className="text-sm text-muted-foreground mt-2">Humanizado</div>
             </div>
-            <div className="text-center">
+            <div className="text-center px-4">
               <div className="font-display font-bold text-3xl md:text-4xl gradient-text">24/7</div>
-              <div className="text-sm text-muted-foreground mt-1">Disponibilidade</div>
+              <div className="text-sm text-muted-foreground mt-2">Disponibilidade</div>
             </div>
           </div>
         </div>
