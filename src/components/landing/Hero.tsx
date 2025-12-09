@@ -1,7 +1,65 @@
 import { ArrowRight, Bot, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState, useRef } from "react";
+
+const useCountUp = (end: number, duration: number = 2000, startOnView: boolean = true) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!startOnView) {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasStarted, startOnView]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * end));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration, hasStarted]);
+
+  return { count, ref };
+};
 
 const Hero = () => {
+  const stat1 = useCountUp(1000, 2000);
+  const stat2 = useCountUp(100, 2000);
+  const stat3 = useCountUp(24, 1500);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Shapes */}
@@ -58,18 +116,24 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-border/30 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="text-center px-4">
-              <div className="font-display font-bold text-3xl md:text-4xl gradient-text">1000+</div>
-              <div className="text-sm text-muted-foreground mt-2">Atendimentos/mês</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-connexia-pink/30 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div ref={stat1.ref} className="text-center px-4 py-6 rounded-2xl bg-gradient-to-b from-connexia-pink/10 to-transparent">
+              <div className="font-display font-black text-4xl md:text-5xl lg:text-6xl gradient-text drop-shadow-lg">
+                {stat1.count}+
+              </div>
+              <div className="text-base md:text-lg text-foreground/80 mt-3 font-medium">Atendimentos/mês</div>
             </div>
-            <div className="text-center px-4">
-              <div className="font-display font-bold text-3xl md:text-4xl gradient-text">100%</div>
-              <div className="text-sm text-muted-foreground mt-2">Humanizado</div>
+            <div ref={stat2.ref} className="text-center px-4 py-6 rounded-2xl bg-gradient-to-b from-connexia-cyan/10 to-transparent">
+              <div className="font-display font-black text-4xl md:text-5xl lg:text-6xl gradient-text drop-shadow-lg">
+                {stat2.count}%
+              </div>
+              <div className="text-base md:text-lg text-foreground/80 mt-3 font-medium">Humanizado</div>
             </div>
-            <div className="text-center px-4">
-              <div className="font-display font-bold text-3xl md:text-4xl gradient-text">24/7</div>
-              <div className="text-sm text-muted-foreground mt-2">Disponibilidade</div>
+            <div ref={stat3.ref} className="text-center px-4 py-6 rounded-2xl bg-gradient-to-b from-connexia-pink/10 to-transparent">
+              <div className="font-display font-black text-4xl md:text-5xl lg:text-6xl gradient-text drop-shadow-lg">
+                {stat3.count}/7
+              </div>
+              <div className="text-base md:text-lg text-foreground/80 mt-3 font-medium">Disponibilidade</div>
             </div>
           </div>
         </div>
