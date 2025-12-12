@@ -1,6 +1,12 @@
 import { ArrowRight, Bot, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 const useCountUp = (end: number, duration: number = 2000, startOnView: boolean = true) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -46,10 +52,13 @@ const useCountUp = (end: number, duration: number = 2000, startOnView: boolean =
   };
 };
 const Hero = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const stat1 = useCountUp(1000, 2000);
   const stat2 = useCountUp(100, 2000);
   const stat3 = useCountUp(24, 1500);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  return (
+    <>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="floating-shape w-96 h-96 -top-20 -right-20 animate-float" />
@@ -99,7 +108,7 @@ const Hero = () => {
               Começar Gratuitamente
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="heroOutline" size="xl">
+            <Button variant="heroOutline" size="xl" onClick={() => setIsVideoOpen(true)}>
               Ver Demonstração
             </Button>
           </div>
@@ -136,6 +145,28 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+
+    {/* YouTube Video Dialog */}
+    <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
+      <DialogContent className="sm:max-w-4xl p-0 bg-background border-connexia-pink/20">
+        <DialogHeader className="p-4 pb-0">
+          <DialogTitle className="text-foreground">Demonstração ConnexIA</DialogTitle>
+        </DialogHeader>
+        <div className="aspect-video w-full">
+          <iframe
+            width="100%"
+            height="100%"
+            src={isVideoOpen ? "https://www.youtube.com/embed/zn8_vlxBlSI?autoplay=1" : ""}
+            title="Demonstração ConnexIA"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="rounded-b-lg"
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
+    </>
+  );
 };
 export default Hero;
