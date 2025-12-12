@@ -113,6 +113,15 @@ const Hero = () => {
             </Button>
           </div>
 
+          {/* Free Trial Badge */}
+          <p className="text-sm text-muted-foreground mt-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-connexia-cyan/10 border border-connexia-cyan/20">
+              <Sparkles className="w-3 h-3 text-connexia-cyan" />
+              <span className="gradient-text font-semibold">14 dias grátis</span>
+              <span className="text-muted-foreground">• Sem cartão de crédito</span>
+            </span>
+          </p>
+
           {/* Stats */}
           <div style={{
           animationDelay: '0.4s'
