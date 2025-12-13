@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "@/assets/Logo_ConnexIA.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +19,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">C</span>
-            </div>
+            <img src={Logo} alt="ConnexIA Logo" className="h-8 w-8" />
             <span className="font-display font-bold text-xl text-foreground">
               connex<span className="gradient-text">ia</span>
             </span>
