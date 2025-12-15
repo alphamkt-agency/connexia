@@ -1,12 +1,7 @@
 import { ArrowRight, Bot, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 const useCountUp = (end: number, duration: number = 2000, startOnView: boolean = true) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -56,8 +51,7 @@ const Hero = () => {
   const stat1 = useCountUp(1000, 2000);
   const stat2 = useCountUp(100, 2000);
   const stat3 = useCountUp(24, 1500);
-  return (
-    <>
+  return <>
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
@@ -67,10 +61,10 @@ const Hero = () => {
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px),
+          backgroundImage: `linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px),
                              linear-gradient(90deg, hsl(var(--muted-foreground)) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
+          backgroundSize: '60px 60px'
+        }} />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -93,8 +87,8 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-up" style={{
-          animationDelay: '0.1s'
-        }}>
+            animationDelay: '0.1s'
+          }}>
             Automatize, encante, execute, resolva e simplifique. 
             Divida o fluxo de trabalho entre colaboradores humanos e virtuais, 
             potencializados pelo poder da inteligência artificial.
@@ -102,8 +96,8 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{
-          animationDelay: '0.2s'
-        }}>
+            animationDelay: '0.2s'
+          }}>
             <Button variant="hero" size="xl">
               Começar Gratuitamente
               <ArrowRight className="w-5 h-5" />
@@ -114,7 +108,9 @@ const Hero = () => {
           </div>
 
           {/* Free Trial Badge */}
-          <p className="text-sm text-muted-foreground mt-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <p className="text-sm text-muted-foreground mt-4 animate-slide-up" style={{
+            animationDelay: '0.3s'
+          }}>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-connexia-cyan/10 border border-connexia-cyan/20">
               <Sparkles className="w-3 h-3 text-connexia-cyan" />
               <span className="gradient-text font-semibold">14 dias grátis</span>
@@ -124,8 +120,8 @@ const Hero = () => {
 
           {/* Stats */}
           <div style={{
-          animationDelay: '0.4s'
-        }} className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-connexia-pink/30 animate-fade-in my-[40px]">
+            animationDelay: '0.4s'
+          }} className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-connexia-pink/30 animate-fade-in my-[40px]">
             <div ref={stat1.ref} className="text-center px-4 py-6 rounded-2xl bg-gradient-to-b from-connexia-pink/10 to-transparent">
               <div className="font-display font-black text-4xl md:text-5xl lg:text-6xl gradient-text drop-shadow-lg">
                 {stat1.count}+
@@ -149,9 +145,7 @@ const Hero = () => {
 
         {/* Floating Bot Icon */}
         <div className="hidden lg:block absolute -bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center glow-effect">
-            <Bot className="w-8 h-8 text-primary-foreground" />
-          </div>
+          
         </div>
       </div>
     </section>
@@ -163,19 +157,10 @@ const Hero = () => {
           <DialogTitle className="text-foreground">Demonstração ConnexIA</DialogTitle>
         </DialogHeader>
         <div className="aspect-video w-full">
-          <iframe
-            width="100%"
-            height="100%"
-            src={isVideoOpen ? "https://www.youtube.com/embed/zn8_vlxBlSI?autoplay=1" : ""}
-            title="Demonstração ConnexIA"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="rounded-b-lg"
-          />
+          <iframe width="100%" height="100%" src={isVideoOpen ? "https://www.youtube.com/embed/zn8_vlxBlSI?autoplay=1" : ""} title="Demonstração ConnexIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-b-lg" />
         </div>
       </DialogContent>
     </Dialog>
-    </>
-  );
+    </>;
 };
 export default Hero;
