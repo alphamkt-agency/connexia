@@ -37,9 +37,11 @@ const CTA = () => {
               Falar com Especialista
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="heroOutline" size="xl">
-              Ver Demonstração
-            </Button>
+            <a href="https://youtu.be/zn8_vlxBlSI?si=lCk1HeLHoMnFlNRg" target="_blank" rel="noopener noreferrer">
+              <Button variant="heroOutline" size="xl">
+                Ver Demonstração
+              </Button>
+            </a>
           </div>
 
           {/* Trust Indicators */}
