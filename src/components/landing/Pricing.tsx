@@ -101,8 +101,10 @@ const Pricing = () => {
               </div>
 
               {/* CTA */}
-              <Button variant={plan.popular ? "hero" : "outline"} size="lg" className="w-full">
-                Começar Gratuitamente  
+              <Button variant={plan.popular ? "hero" : "outline"} size="lg" className="w-full" asChild>
+                <a href="https://plataforma.connexiaapp.com.br/registerPage">
+                  Começar Gratuitamente
+                </a>
               </Button>
             </div>)}
         </div>
