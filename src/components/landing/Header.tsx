@@ -74,7 +74,7 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="ghost" size="default" className="mt-2 w-full">
+              <Button variant="outline" size="default" className="mt-2 w-full">
                 Login
               </Button>
               <Button variant="hero" size="default" className="w-full">
