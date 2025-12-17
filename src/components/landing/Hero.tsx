@@ -98,9 +98,11 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{
             animationDelay: '0.2s'
           }}>
-            <Button variant="hero" size="xl">
-              Começar Gratuitamente
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="hero" size="xl" asChild>
+              <a href="https://plataforma.connexiaapp.com.br/registerPage">
+                Começar Gratuitamente
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
             <Button variant="heroOutline" size="xl" onClick={() => setIsVideoOpen(true)}>
               Ver Demonstração
