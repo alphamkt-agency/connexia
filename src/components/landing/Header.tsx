@@ -40,7 +40,7 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="default">
+            <Button variant="outline" size="default">
               Login
             </Button>
             <Button variant="hero" size="default">
