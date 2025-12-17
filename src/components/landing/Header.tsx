@@ -38,8 +38,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
+            <Button variant="ghost" size="default">
+              Login
+            </Button>
             <Button variant="hero" size="default">
               Começar Agora
             </Button>
@@ -71,7 +74,10 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="hero" size="default" className="mt-2">
+              <Button variant="ghost" size="default" className="mt-2 w-full">
+                Login
+              </Button>
+              <Button variant="hero" size="default" className="w-full">
                 Começar Agora
               </Button>
             </nav>
