@@ -40,8 +40,10 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" size="default">
-              Login
+            <Button variant="outline" size="default" asChild>
+              <a href="https://plataforma.connexiaapp.com.br/loginPage">
+                Login
+              </a>
             </Button>
             <Button variant="hero" size="default" asChild>
               <a href="https://plataforma.connexiaapp.com.br/registerPage">
