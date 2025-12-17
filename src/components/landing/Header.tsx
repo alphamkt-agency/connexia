@@ -78,8 +78,10 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="outline" size="default" className="mt-2 w-full">
-                Login
+              <Button variant="outline" size="default" className="mt-2 w-full" asChild>
+                <a href="https://plataforma.connexiaapp.com.br/loginPage">
+                  Login
+                </a>
               </Button>
               <Button variant="hero" size="default" className="w-full">
                 Começar Agora
