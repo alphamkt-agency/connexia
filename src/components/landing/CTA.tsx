@@ -1,7 +1,14 @@
 import { ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 const CTA = () => {
-  return <section id="contato" className="py-24 relative overflow-hidden">
+  return (
+    <section id="contato" className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-hero opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
@@ -37,17 +44,32 @@ const CTA = () => {
               Falar com Especialista
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <a href="https://youtu.be/zn8_vlxBlSI?si=lCk1HeLHoMnFlNRg" target="_blank" rel="noopener noreferrer">
-              <Button variant="heroOutline" size="xl">
-                Ver Demonstração
-              </Button>
-            </a>
+            
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="heroOutline" size="xl">
+                  Ver Demonstração
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl p-0 bg-background border-border overflow-hidden">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/zn8_vlxBlSI?autoplay=1"
+                    title="Demonstração ConnexIA"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Trust Indicators */}
-          
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CTA;
