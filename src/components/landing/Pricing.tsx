@@ -102,7 +102,7 @@ const Pricing = () => {
 
               {/* CTA */}
               <Button variant={plan.popular ? "hero" : "outline"} size="lg" className="w-full">
-                Contratar Agora
+                Começar Gratuitamente  
               </Button>
             </div>)}
         </div>
