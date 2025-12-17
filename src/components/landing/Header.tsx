@@ -83,8 +83,10 @@ const Header = () => {
                   Login
                 </a>
               </Button>
-              <Button variant="hero" size="default" className="w-full">
-                Começar Agora
+              <Button variant="hero" size="default" className="w-full" asChild>
+                <a href="https://plataforma.connexiaapp.com.br/registerPage">
+                  Começar Agora
+                </a>
               </Button>
             </nav>
           </div>
