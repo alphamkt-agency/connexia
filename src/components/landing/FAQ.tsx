@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Como é o suporte da ConnexIA?",
-    answer: "Todos os planos incluem suporte via chat e e-mail. Nos planos Premium e Growth, você também tem acesso a suporte prioritário e reuniões de acompanhamento para otimizar seus resultados."
+    answer: "Todos os planos incluem suporte via e-mail e WhatsApp. Nos planos Premium e Growth, você também tem acesso a suporte prioritário e reuniões de acompanhamento para otimizar seus resultados."
   }
 ];
 
