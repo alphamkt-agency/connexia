@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "A ConnexIA integra com meu sistema atual?",
-    answer: "Sim! Oferecemos integração nativa com WhatsApp, Instagram, Facebook Messenger, e-mail e chat no site. Também temos API aberta para integração com CRMs, ERPs e outros sistemas que você já utiliza."
+    answer: "Oferecemos integração web com WhatsApp."
   },
   {
     question: "Existe período de teste gratuito?",
