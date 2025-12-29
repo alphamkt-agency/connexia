@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "Existe período de teste gratuito?",
-    answer: "Sim! Oferecemos 7 dias de teste gratuito em todos os planos para você experimentar a plataforma sem compromisso. Durante o teste, você tem acesso a todas as funcionalidades do plano escolhido."
+    answer: "Sim! Oferecemos 14 dias de teste gratuito em todos os planos para você experimentar a plataforma sem compromisso. Durante o teste, você tem acesso a todas as funcionalidades do plano escolhido."
   },
   {
     question: "Como é o suporte da ConnexIA?",
