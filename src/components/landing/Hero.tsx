@@ -2,6 +2,7 @@ import { ArrowRight, Bot, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import heroAiImage from "@/assets/hero-ai-assistant.png";
 const useCountUp = (end: number, duration: number = 2000, startOnView: boolean = true) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -116,9 +117,20 @@ const Hero = () => {
             </span>
           </p>
 
-          {/* Embedded Video */}
-          <div className="mt-12 animate-slide-up" style={{ animationDelay: '0.35s' }}>
-            <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-connexia-pink/20 bg-background">
+          {/* Hero Image and Video Section */}
+          <div className="mt-12 animate-slide-up grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto" style={{ animationDelay: '0.35s' }}>
+            {/* AI Illustration */}
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-connexia-pink/20 to-connexia-cyan/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <img 
+                src={heroAiImage} 
+                alt="Assistente IA ConnexIA" 
+                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto transform group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+            
+            {/* Embedded Video */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-connexia-pink/20 bg-background">
               <div className="aspect-video w-full">
                 <iframe 
                   width="100%" 

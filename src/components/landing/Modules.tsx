@@ -1,4 +1,10 @@
 import { ShoppingCart, Calendar, Megaphone, HeadphonesIcon, Wrench, Bot } from "lucide-react";
+import agentSales from "@/assets/agent-sales.png";
+import agentScheduling from "@/assets/agent-scheduling.png";
+import agentMarketing from "@/assets/agent-marketing.png";
+import agentSupport from "@/assets/agent-support.png";
+import agentTechnical from "@/assets/agent-technical.png";
+import agentCustom from "@/assets/agent-custom.png";
 
 const modules = [
   {
@@ -6,36 +12,42 @@ const modules = [
     title: "Agente de Vendas",
     description: "Especialista em conversões, qualifica leads e conduz negociações com tom persuasivo e personalizado.",
     color: "from-connexia-magenta to-connexia-pink",
+    image: agentSales,
   },
   {
     icon: Calendar,
     title: "Agente de Agendamentos",
     description: "Gerencia reservas, confirma horários e envia lembretes automaticamente, sem conflitos de agenda.",
     color: "from-connexia-cyan to-connexia-blue",
+    image: agentScheduling,
   },
   {
     icon: Megaphone,
     title: "Agente de Marketing",
     description: "Engaja leads com campanhas personalizadas, nurture automático e mensagens segmentadas.",
     color: "from-connexia-pink to-connexia-magenta",
+    image: agentMarketing,
   },
   {
     icon: HeadphonesIcon,
     title: "Agente de Suporte",
     description: "Resolve dúvidas e problemas 24/7 com respostas precisas baseadas na sua base de conhecimento.",
     color: "from-connexia-blue to-connexia-cyan",
+    image: agentSupport,
   },
   {
     icon: Wrench,
     title: "Agente Técnico",
     description: "Especializado em suporte técnico avançado, troubleshooting e orientações detalhadas.",
     color: "from-connexia-magenta to-connexia-cyan",
+    image: agentTechnical,
   },
   {
     icon: Bot,
     title: "Crie Seu Agente",
     description: "Defina personalidade, tom de voz e comportamento único para qualquer função que seu negócio precisar.",
     color: "from-connexia-cyan to-connexia-magenta",
+    image: agentCustom,
   },
 ];
 
@@ -66,22 +78,25 @@ const Modules = () => {
           {modules.map((module, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-3xl bg-card border border-border/50 hover:border-connexia-magenta/50 transition-all duration-500 hover:scale-[1.03] card-shadow overflow-hidden"
+              className="group relative p-6 rounded-3xl bg-card border border-border/50 hover:border-connexia-magenta/50 transition-all duration-500 hover:scale-[1.03] card-shadow overflow-hidden"
             >
               {/* Gradient Background on Hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
               
-              {/* Diamond Shape Icon Container */}
-              <div className="relative mb-6">
-                <div className={`w-16 h-16 rotate-45 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center group-hover:rotate-[55deg] transition-transform duration-500`}>
-                  <module.icon className="w-7 h-7 text-primary-foreground -rotate-45 group-hover:-rotate-[55deg] transition-transform duration-500" />
-                </div>
+              {/* Agent Image */}
+              <div className="relative mb-4 overflow-hidden rounded-2xl">
+                <div className={`absolute inset-0 bg-gradient-to-t ${module.color} opacity-20`} />
+                <img 
+                  src={module.image} 
+                  alt={module.title}
+                  className="w-full h-40 object-cover object-top rounded-2xl group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
 
               <h3 className="font-display font-bold text-xl text-foreground mb-3 relative">
                 {module.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed relative">
+              <p className="text-muted-foreground leading-relaxed relative text-sm">
                 {module.description}
               </p>
             </div>
