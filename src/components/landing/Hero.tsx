@@ -93,9 +93,20 @@ const Hero = () => {
             potencializados pelo poder da inteligência artificial.
           </p>
 
-          {/* CTA Button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{
+          {/* Embedded Video */}
+          <div className="mt-10 animate-slide-up" style={{
           animationDelay: '0.2s'
+        }}>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-connexia-pink/20 bg-background max-w-3xl mx-auto">
+              <div className="aspect-video w-full">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zn8_vlxBlSI" title="Demonstração ConnexIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-2xl" />
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10 animate-slide-up" style={{
+          animationDelay: '0.3s'
         }}>
             <Button variant="hero" size="xl" asChild>
               <a href="https://plataforma.connexiaapp.com.br/registerPage">
@@ -107,7 +118,7 @@ const Hero = () => {
 
           {/* Free Trial Badge */}
           <p className="text-sm text-muted-foreground mt-4 animate-slide-up" style={{
-          animationDelay: '0.3s'
+          animationDelay: '0.35s'
         }}>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-connexia-cyan/10 border border-connexia-cyan/20">
               <Sparkles className="w-3 h-3 text-connexia-cyan" />
@@ -115,24 +126,6 @@ const Hero = () => {
               <span className="text-muted-foreground">• Sem cartão de crédito</span>
             </span>
           </p>
-
-          {/* Hero Image and Video Section */}
-          <div className="mt-12 animate-slide-up grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto" style={{
-          animationDelay: '0.35s'
-        }}>
-            {/* AI Illustration */}
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-connexia-pink/20 to-connexia-cyan/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              
-            </div>
-            
-            {/* Embedded Video */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-connexia-pink/20 bg-background">
-              <div className="aspect-video w-full">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zn8_vlxBlSI" title="Demonstração ConnexIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-2xl" />
-              </div>
-            </div>
-          </div>
 
           {/* Stats */}
           <div style={{
