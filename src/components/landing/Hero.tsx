@@ -51,8 +51,7 @@ const Hero = () => {
   const stat1 = useCountUp(1000, 2000);
   const stat2 = useCountUp(100, 2000);
   const stat3 = useCountUp(24, 1500);
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="floating-shape w-96 h-96 -top-20 -right-20 animate-float" />
@@ -61,10 +60,10 @@ const Hero = () => {
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px),
+        backgroundImage: `linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px),
                              linear-gradient(90deg, hsl(var(--muted-foreground)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }} />
+        backgroundSize: '60px 60px'
+      }} />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -87,8 +86,8 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-up" style={{
-            animationDelay: '0.1s'
-          }}>
+          animationDelay: '0.1s'
+        }}>
             Automatize, encante, execute, resolva e simplifique. 
             Divida o fluxo de trabalho entre colaboradores humanos e virtuais, 
             potencializados pelo poder da inteligência artificial.
@@ -96,8 +95,8 @@ const Hero = () => {
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{
-            animationDelay: '0.2s'
-          }}>
+          animationDelay: '0.2s'
+        }}>
             <Button variant="hero" size="xl" asChild>
               <a href="https://plataforma.connexiaapp.com.br/registerPage">
                 Começar Gratuitamente
@@ -108,8 +107,8 @@ const Hero = () => {
 
           {/* Free Trial Badge */}
           <p className="text-sm text-muted-foreground mt-4 animate-slide-up" style={{
-            animationDelay: '0.3s'
-          }}>
+          animationDelay: '0.3s'
+        }}>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-connexia-cyan/10 border border-connexia-cyan/20">
               <Sparkles className="w-3 h-3 text-connexia-cyan" />
               <span className="gradient-text font-semibold">14 dias grátis</span>
@@ -118,37 +117,27 @@ const Hero = () => {
           </p>
 
           {/* Hero Image and Video Section */}
-          <div className="mt-12 animate-slide-up grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto" style={{ animationDelay: '0.35s' }}>
+          <div className="mt-12 animate-slide-up grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto" style={{
+          animationDelay: '0.35s'
+        }}>
             {/* AI Illustration */}
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-connexia-pink/20 to-connexia-cyan/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              <img 
-                src={heroAiImage} 
-                alt="Assistente IA ConnexIA" 
-                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto transform group-hover:scale-[1.02] transition-transform duration-500"
-              />
+              
             </div>
             
             {/* Embedded Video */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-connexia-pink/20 bg-background">
               <div className="aspect-video w-full">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://www.youtube.com/embed/zn8_vlxBlSI" 
-                  title="Demonstração ConnexIA" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen 
-                  className="rounded-2xl"
-                />
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zn8_vlxBlSI" title="Demonstração ConnexIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-2xl" />
               </div>
             </div>
           </div>
 
           {/* Stats */}
           <div style={{
-            animationDelay: '0.4s'
-          }} className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-connexia-pink/30 animate-fade-in my-[40px]">
+          animationDelay: '0.4s'
+        }} className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 md:gap-16 mt-16 pt-16 border-t border-connexia-pink/30 animate-fade-in my-[40px]">
             <div ref={stat1.ref} className="text-center px-4 py-6 rounded-2xl bg-gradient-to-b from-connexia-pink/10 to-transparent">
               <div className="font-display font-black text-4xl md:text-5xl lg:text-6xl gradient-text drop-shadow-lg">
                 {stat1.count}+
@@ -175,7 +164,6 @@ const Hero = () => {
           
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default Hero;
