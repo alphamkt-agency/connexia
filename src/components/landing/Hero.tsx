@@ -47,11 +47,10 @@ const useCountUp = (end: number, duration: number = 2000, startOnView: boolean =
   };
 };
 const Hero = () => {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const stat1 = useCountUp(1000, 2000);
   const stat2 = useCountUp(100, 2000);
   const stat3 = useCountUp(24, 1500);
-  return <>
+  return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
@@ -94,7 +93,7 @@ const Hero = () => {
             potencializados pelo poder da inteligência artificial.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{
             animationDelay: '0.2s'
           }}>
@@ -103,9 +102,6 @@ const Hero = () => {
                 Começar Gratuitamente
                 <ArrowRight className="w-5 h-5" />
               </a>
-            </Button>
-            <Button variant="heroOutline" size="xl" onClick={() => setIsVideoOpen(true)}>
-              Ver Demonstração
             </Button>
           </div>
 
@@ -119,6 +115,23 @@ const Hero = () => {
               <span className="text-muted-foreground">• Sem cartão de crédito</span>
             </span>
           </p>
+
+          {/* Embedded Video */}
+          <div className="mt-12 animate-slide-up" style={{ animationDelay: '0.35s' }}>
+            <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-connexia-pink/20 bg-background">
+              <div className="aspect-video w-full">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/zn8_vlxBlSI" 
+                  title="Demonstração ConnexIA" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen 
+                  className="rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
 
           {/* Stats */}
           <div style={{
@@ -151,18 +164,6 @@ const Hero = () => {
         </div>
       </div>
     </section>
-
-    {/* YouTube Video Dialog */}
-    <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
-      <DialogContent className="sm:max-w-4xl p-0 bg-background border-connexia-pink/20">
-        <DialogHeader className="p-4 pb-0">
-          <DialogTitle className="text-foreground">Demonstração ConnexIA</DialogTitle>
-        </DialogHeader>
-        <div className="aspect-video w-full">
-          <iframe width="100%" height="100%" src={isVideoOpen ? "https://www.youtube.com/embed/zn8_vlxBlSI?autoplay=1" : ""} title="Demonstração ConnexIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-b-lg" />
-        </div>
-      </DialogContent>
-    </Dialog>
-    </>;
+  );
 };
 export default Hero;
